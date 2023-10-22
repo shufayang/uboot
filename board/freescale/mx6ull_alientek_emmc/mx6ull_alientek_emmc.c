@@ -784,16 +784,16 @@ struct display_info_t const displays[] = {{
 	.detect = NULL,
 	.enable	= do_enable_parallel_lcd,
 	.mode	= {
-		.name			= "TFT43AB",
-		.xres           = 480,
-		.yres           = 272,
-		.pixclock       = 108695,
-		.left_margin    = 8,
-		.right_margin   = 4,
-		.upper_margin   = 2,
-		.lower_margin   = 4,
-		.hsync_len      = 41,
-		.vsync_len      = 10,
+		.name			= "TFT7016",
+		.xres           = 1024,
+		.yres           = 600,
+		.pixclock       = 19531, //TFT7016 屏幕要求像素时钟为51.2MHz(1/51200000)*10^12=19531  
+		.left_margin    = 140,   //HBPD
+		.right_margin   = 160,   //HFPD
+		.upper_margin   = 20,    //VBPD
+		.lower_margin   = 12,    //VFBD
+		.hsync_len      = 20,    //HSPW
+		.vsync_len      = 3,     //VSPW
 		.sync           = 0,
 		.vmode          = FB_VMODE_NONINTERLACED
 } } };
